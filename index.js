@@ -6,6 +6,7 @@ try {
   let ProdDeploy = false;
   let NonProdDeploy = false;
   const eventName = process.env.GITHUB_EVENT_NAME;
+  const baseBranch = procees.env.baseBranch;
 
   // Fetch Branch Name
   if (eventName === 'pull_request') {
@@ -41,6 +42,7 @@ try {
     NonProdDeploy = true;
   }
   core.setOutput('non_prod_deploy', NonProdDeploy);
+  core.setOutput('base_branch', baseBranch);
 } catch (error) {
   core.setFailed(error.message);
 }
