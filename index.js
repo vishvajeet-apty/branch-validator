@@ -6,7 +6,7 @@ try {
   let ProdDeploy = false;
   let NonProdDeploy = false;
   const eventName = process.env.GITHUB_EVENT_NAME;
-  const baseBranch = procees.env.baseBranch;
+  const baseBranch = process.env.baseBranch;
 
   // Fetch Branch Name
   if (eventName === 'pull_request') {
@@ -14,7 +14,7 @@ try {
   } else if (eventName === 'push' || eventName === 'workflow_run') {
     branchName = process.env.GITHUB_REF.replace('refs/heads/', '');
   }
-
+  
   // Validate and set branch Name
   const validBranchRegex = /(^(revert)-[0-9]{1,5}-(feature|bugfix|hotfix|onprem|test)\/(LSP|CB|AQRE|LP|ASE|CED|SAP|FR)-[0-9]{1,5}\/[0-9a-zA-Z_-]+$)|(^(feature|bugfix|hotfix|onprem|test)\/(LSP|CB|AQRE|LP|ASE|CED|SAP|FR)-[0-9]{1,5}\/[0-9a-zA-Z_-]+$)|(^(development|staging|production|qa|qa1|hotfix|labs|onprem|nightly)$)|((rc)-\d*.\d*.\d*)/;
   if (!validBranchRegex.test(branchName)) {
