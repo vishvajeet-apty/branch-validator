@@ -19,5 +19,5 @@ jobs:
       prod_deploy: ${{ steps.validations.outputs.prod_deploy}}
     steps:
       - name: Fetch Branch Name
-        uses: vishvajeet-apty/deployment-check-action@main
+        uses: vishvajeet-apty/deployment-check-actions@main
         id: validations
