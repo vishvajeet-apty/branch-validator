@@ -12,7 +12,7 @@ on:
       Branch:
         description: 'Enter branch name to be deployed'
         required: true
-        default: 'development'
+        default: 'rc-34'
 
 jobs:
   UUID:
@@ -28,5 +28,21 @@ jobs:
         run: | 
             echo "::set-output name=uuid::$(uuidgen)"
             echo "## :round_pushpin: ${{ github.event.inputs.Branch }} Branch >> ${{ github.event.inputs.Environment }} Environment" >> $GITHUB_STEP_SUMMARY
+  
+  DEPLOYER:
+    name: deployer
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy checkerrrr 
+        uses: vishvajeet-apty/deployment-check-actions@main
+        id: depender
+        with:
+          BUCKET_NAME: "apty-bundle-watch/apty-assist"
+          REGION: "us-east-1"
+          CONFIG_PATH: "./player3.0/bundle.config.json"
+          TARGET_BRANCH: ${{github.event.pull_request.base.ref}}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   
   
