@@ -1,0 +1,23 @@
+name: GHAssist
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+  pull_request:
+    branches:
+     - main
+     - feature/**
+jobs:
+  rules:
+    name: Rules
+    runs-on: ubuntu-latest
+    outputs:
+      branch_name: ${{ steps.validations.outputs.branch_name }}
+      should_deploy: ${{ steps.validations.outputs.should_deploy}}
+      non_prod_deploy: ${{ steps.validations.outputs.non_prod_deploy}}
+      prod_deploy: ${{ steps.validations.outputs.prod_deploy}}
+    steps:
+      - name: Fetch Branch Name
+        uses: vishvajeet-apty/deployment-check-action
+        id: validations

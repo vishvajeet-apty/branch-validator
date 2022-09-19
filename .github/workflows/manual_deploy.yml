@@ -1,0 +1,28 @@
+name: Manual_Deploy_GHAssist
+on:
+  workflow_dispatch:
+    inputs:
+      Environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'development'
+        type: choice
+        options: ['development', 'qa', 'qa1', 'staging', 'production']
+      Branch:
+        description: 'Enter branch name to be deployed'
+        required: true
+        default: 'rc-'
+jobs:
+  UUID:
+    name: UUID
+    environment:
+      name: deployment-env
+    runs-on: ubuntu-latest
+    outputs:
+      uuid: ${{ steps.uuid.outputs.uuid }}
+    steps:
+      - name: Get uuid
+        id: uuid
+        run: |
+            echo "::set-output name=uuid::$(uuidgen)"
+            echo "## :round_pushpin: ${{ github.event.inputs.Branch }} Branch >> ${{ github.event.inputs.Environment }} Environment" >> $GITHUB_STEP_SUMMARY
