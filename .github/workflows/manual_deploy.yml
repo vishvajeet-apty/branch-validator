@@ -9,7 +9,7 @@ on:
         type: choice
         options: ['development', 'qa', 'qa1', 'staging', 'production']
       Branch:
-        description: 'Enter branch name to be deployed'
+        description: 'Enter branch name which is to be deployed'
         required: true
         default: 'rc-'
 jobs:
