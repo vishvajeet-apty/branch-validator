@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: deploy checkerrrr 
         uses: vishvajeet-apty/deployment-check-actions@main
-        id: where all 
+        id: neverquit
         with:
           BRANCH_NAME: "${{github.event.inputs.Branch}}"
           BUCKET_NAME: "apty-bundle-watch/apty-assist"
