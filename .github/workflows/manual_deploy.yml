@@ -30,19 +30,6 @@ jobs:
             echo "::set-output name=uuid::$(uuidgen)"
             echo "## :round_pushpin: ${{ github.event.inputs.Branch }} Branch >> ${{ github.event.inputs.Environment }} Environment" >> $GITHUB_STEP_SUMMARY
 
-  rules:
-    name: Rules
-    runs-on: ubuntu-latest
-    outputs:
-      branch_name: ${{ steps.validations.outputs.branch_name }}
-      should_deploy: ${{ steps.validations.outputs.should_deploy}}
-      non_prod_deploy: ${{ steps.validations.outputs.non_prod_deploy}}
-      prod_deploy: ${{ steps.validations.outputs.prod_deploy}}
-    steps:
-      - name: Fetch Branch Name
-        uses: aptyInc/gha-branch-name@master
-        id: validations
-
   DEPLOYER:
     name: deployer
     runs-on: ubuntu-latest
@@ -52,7 +39,7 @@ jobs:
         uses: vishvajeet-apty/deployment-check-actions@main
         id: depender
         with:
-          BRANCH_NAME: "${{needs.rules.outputs.branch_name}}"
+          BRANCH_NAME: "${{github.event.inputs.Branch}}"
           BUCKET_NAME: "apty-bundle-watch/apty-assist"
           REGION: "us-east-1"
           CONFIG_PATH: "./"
