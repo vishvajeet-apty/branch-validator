@@ -37,6 +37,7 @@ jobs:
         uses: vishvajeet-apty/deployment-check-actions@main
         id: depender
         with:
+          BRANCH_NAME: "main"
           BUCKET_NAME: "apty-bundle-watch/apty-assist"
           REGION: "us-east-1"
           CONFIG_PATH: "./"
