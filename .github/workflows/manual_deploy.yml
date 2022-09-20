@@ -10,7 +10,7 @@ on:
         type: choice
         options: ['development', 'qa', 'qa1', 'staging']
       Branch:
-        description: 'Enter the branch name to be deployed'
+        description: 'Enter the name of the branch to be deployed'
         required: true
         default: 'rc-34'
 
@@ -40,7 +40,7 @@ jobs:
       prod_deploy: ${{ steps.validations.outputs.prod_deploy}}
     steps:
       - name: Fetch Branch Name
-        uses: aptyInc/gha-branch-name
+        uses: aptyInc/gha-branch-name@master
         id: validations
 
   DEPLOYER:
