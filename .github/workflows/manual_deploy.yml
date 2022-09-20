@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: deploy checkerrrr 
         uses: vishvajeet-apty/deployment-check-actions@main
-        id: depender
+        id: where all 
         with:
           BRANCH_NAME: "${{github.event.inputs.Branch}}"
           BUCKET_NAME: "apty-bundle-watch/apty-assist"
@@ -46,5 +46,7 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  
   
   
