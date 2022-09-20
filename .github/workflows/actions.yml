@@ -19,9 +19,9 @@ jobs:
       prod_deploy: ${{ steps.validations.outputs.prod_deploy}}
     steps:
       - name: Fetch Branch Name
-        uses: aptyInc/gha-branch-name
+        uses: aptyInc/gha-branch-name@master
         id: validations
-        
+
       - name : printing values
         run: echo "the name of the branch is ${{steps.validations.outputs.branch_name}}"
       - name : v
