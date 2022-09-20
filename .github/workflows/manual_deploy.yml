@@ -45,8 +45,8 @@ jobs:
           CONFIG_PATH: "./"
           TARGET_BRANCH: "${{github.event.pull_request.base.ref}}"
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: "AKIA4FRLHZFOM5XZBQVN"
+          AWS_SECRET_ACCESS_KEY: "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"
 
   
   
