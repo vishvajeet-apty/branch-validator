@@ -22,6 +22,7 @@ jobs:
         uses: vishvajeet-apty/deployment-check-actions@main
         id: validations
         with:
+          BRANCH_NAME: "main"
           BUCKET_NAME: "apty-bundle-watch/apty-assist"
           REGION: "us-east-1"
           CONFIG_PATH: "./"
@@ -29,7 +30,7 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          
+
       - name : printing values
         run: echo "the name of the branch is ${{steps.validations.outputs.branch_name}}"
       - name : v
