@@ -10,7 +10,7 @@ on:
         type: choice
         options: ['development', 'qa', 'qa1', 'staging']
       Branch:
-        description: 'Enter branch name to be deployed'
+        description: 'Enter the branch name to be deployed'
         required: true
         default: 'rc-34'
 
