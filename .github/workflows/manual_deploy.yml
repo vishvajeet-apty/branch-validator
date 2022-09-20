@@ -39,6 +39,7 @@ jobs:
         id: neverquit
         with:
           BRANCH_NAME: "${{github.event.inputs.Branch}}"
+          ENVIRONMENT_NAME: "${{github.event.inputs.Environment}}"
           BUCKET_NAME: "apty-bundle-watch/apty-assist"
           REGION: "us-east-1"
           CONFIG_PATH: "./"
