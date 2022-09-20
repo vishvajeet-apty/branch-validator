@@ -24,7 +24,7 @@ jobs:
     outputs:
       uuid: ${{ steps.uuid.outputs.uuid }}
     steps:
-      - name: Get uuid
+      - name: Get the uuid
         id: uuid
         run: | 
             echo "::set-output name=uuid::$(uuidgen)"
