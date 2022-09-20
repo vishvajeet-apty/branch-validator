@@ -4,10 +4,12 @@ on:
     branches:
       - main
       - feature/*
+      - development
   pull_request:
     branches:
      - main
      - feature/**
+     - development
 jobs:
   rules:
     name: Rules
