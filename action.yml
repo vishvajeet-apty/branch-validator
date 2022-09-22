@@ -2,7 +2,7 @@ name: 'gha-branch-name'
 description: 'Fetches Branch Name'
 outputs:
   branch_name:
-    description: 'The Branch Name doesnot matter here.......'
+    description: 'The Branch Name doesnot matter here..THat is what i said yeah.......'
 runs:
   using: 'node12'
   main: 'index.js'
