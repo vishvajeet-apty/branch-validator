@@ -13,6 +13,10 @@ on:
         description: 'Enter the name of the branch to be deployed'
         required: true
         default: 'rc-34'
+      EventType:
+        description: 'Enter the type of event (push or Pull request)'
+        required: true
+        default: 'push'
 
 jobs:
   
