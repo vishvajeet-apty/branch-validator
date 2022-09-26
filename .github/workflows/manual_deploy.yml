@@ -50,8 +50,8 @@ jobs:
           TARGET_BRANCH: "${{github.event.pull_request.base.ref}}"
           EVENT_TYPE: "${{github.event.inputs.EventType}}"
         env:
-          AWS_ACCESS_KEY_ID: "AKIATYUNLTTFDBSOS57K"
-          AWS_SECRET_ACCESS_KEY: "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"
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
 
   
   
