@@ -32,6 +32,7 @@ jobs:
 
   DEPLOYER:
     name: push-pr-blocker
+    needs : [rules]
     runs-on: ubuntu-latest
     steps:
       - name: push-pr checkerrrr 
