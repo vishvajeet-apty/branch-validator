@@ -8,15 +8,12 @@ on:
         required: true
         default: 'development'
         type: choice
-        options: ['development', 'qa', 'qa1', 'staging','first', 'second', 'third' ,'four' ,'five', 'six', 'seven']
+        options: ['development', 'qa', 'qa1', 'staging','alpha','beta','gamma','delta']
       Branch:
         description: 'Enter the name of the branch to be deployed'
         required: true
         default: 'rc-34'
-      EventType:
-        description: 'Enter the type of event (push or Pull request)'
-        required: true
-        default: 'push'
+      
 
 jobs:
   
