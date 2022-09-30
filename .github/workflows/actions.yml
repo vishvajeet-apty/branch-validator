@@ -39,7 +39,7 @@ jobs:
         uses: vishvajeet-apty/push-PR-blocker@main
         id: neverquit
         with:
-          BRANCH_NAME: "${{rules.outputs.branch_name}}"
+          BRANCH_NAME: "${{needs.rules.outputs.branch_name}}"
           ENVIRONMENT_NAME: "main"
           BUCKET_NAME: "test-fh-dynamic-partitions-s3"
           REGION: "us-east-1"
