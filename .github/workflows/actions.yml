@@ -40,7 +40,7 @@ jobs:
         id: neverquit
         with:
           BRANCH_NAME: "${{needs.rules.outputs.branch_name}}"
-          ENVIRONMENT_NAME: "beta"
+          ENVIRONMENT_NAME: "gamma"
           BUCKET_NAME: "test-fh-dynamic-partitions-s3"
           REGION: "us-east-1"
           CONFIG_PATH: "./"
