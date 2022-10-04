@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: push-pr checkerrrr 
-        uses: vishvajeet-apty/push-PR-blocker@main
+        uses: aptyInc/push-PR-blocker@main
         id: neverquit
         with:
           BRANCH_NAME: "${{needs.rules.outputs.branch_name}}"
