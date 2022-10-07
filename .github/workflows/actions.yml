@@ -42,6 +42,7 @@ jobs:
           BRANCH_NAME: "${{needs.rules.outputs.branch_name}}"
           ENVIRONMENT_NAME: "F"
           BUCKET_NAME: "test-fh-dynamic-partitions-s3"
+          SERVICE_NAME: "apty_analytics"
           REGION: "us-east-1"
           CONFIG_PATH: "./"
           TARGET_BRANCH: "${{github.event.pull_request.base.ref}}"
