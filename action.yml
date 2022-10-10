@@ -2,7 +2,7 @@ name: 'gha-branch-name'
 description: 'Fetches Branch Name'
 outputs:
   branch_name:
-    description: 'The deploy_environment matters atter here..THat is what i said yeah.......'
+    description: 'Only the Pull request will create the comment.'
 runs:
   using: 'node12'
   main: 'index.js'
