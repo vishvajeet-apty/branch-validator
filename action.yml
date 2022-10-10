@@ -2,7 +2,7 @@ name: 'gha-branch-name'
 description: 'Fetches Branch Name'
 outputs:
   branch_name:
-    description: 'Only the Pull request will create the comment.'
+    description: 'Only the Pull request will create the comment and include the branch name'
 runs:
   using: 'node12'
   main: 'index.js'
