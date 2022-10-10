@@ -52,8 +52,7 @@ jobs:
 
 
       - uses: actions/github-script@0.9.0
-        if: github.event_name == 'pull_request'
-        continue-on-error: true
+        if: always() 
         env:
           PLAN: "${{ steps.blocker.outputs.comment }}"
         with:
