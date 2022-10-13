@@ -42,7 +42,7 @@ jobs:
           BRANCH_NAME: "${{github.event.inputs.Branch}}"
           ENVIRONMENT_NAME: "${{github.event.inputs.Environment}}"
           BUCKET_NAME: "test-fh-dynamic-partitions-s3"
-          SERVICE_NAME: "admin55"
+          SERVICE_NAME: "admin45"
           REGION: "us-east-1"
           TARGET_BRANCH: "${{github.event.pull_request.base.ref}}"
         env:
