@@ -2,7 +2,7 @@ name: 'gha-branch-name'
 description: 'Fetches Branch Name'
 outputs:
   branch_name:
-    description: 'Testing time.'
+    description: 'Testing time for the engineering team'
 runs:
   using: 'node12'
   main: 'index.js'
