@@ -8,7 +8,7 @@ on:
         required: true
         default: 'development'
         type: choice
-        options: ['development', 'qa', 'qa1', 'production', 'E', 'F' ]
+        options: ['development', 'qa', 'qa1', 'production' ]
       Branch:
         description: 'Enter the name of the branch to be deployed'
         required: true
